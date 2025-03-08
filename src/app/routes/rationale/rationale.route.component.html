@@ -1,0 +1,53 @@
+<header class="page-header">
+  <h2>Page Reactivity with Signals</h2>
+</header>
+<p>
+  We use frameworks and libraries because they do a lot of boilerplate and heavy lifting for us, often because we
+  don't necessarily <strong>want to</strong> or <strong>have the time to</strong> understand all the lower level
+  complexities of our corresponding front- and back-end; or full-stack principles.
+</p>
+<p>
+  At least for me, for the longest time <strong>change detection</strong> was one of the pieces of "magic" that I
+  took for granted in my favourite Single Page Application framework, <a href="http://angular.dev">Angular</a>. The
+  Angular team has been making very impressive changes since version 9 (now ten versions ago!); with some of
+  biggest milestones for me being the Ivy Compiler and standalone components.
+</p>
+<p>In this small project I am specifically tackling two things:</p>
+<h3>An opinion of opinion</h3>
+<p>
+  Unlike other SPA tools like Vue, React and Svelte, Angular is a fully-fledged, (consired very) opinionated,
+  front-end framework. In turn, this is merely my opinion, but I believe Angular has already, and will continue to
+  introduce alternative ways of building the same thing; or perhaps even encourage the use of language or browser
+  native approaches to challenges we face in our applications. I trust you will see some motivation towards that
+  opinion of mine in this mini-project.
+</p>
+<h3>The signal behind Signals</h3>
+<p>
+  One of the other milestones is the use of Signals being adopted; or being encouraged for adoption, by the Angular
+  team. There are enough articles on the internet related to the evolution of
+  <a href="https://angular.dev/essentials/signals" target="_blank">Signals</a>, but this project would like to
+  highlight the "long play" or the core driver behind the introduction of Signals.
+</p>
+<p>
+  Since inception Angular has been using
+  <a href="https://www.npmjs.com/package/zone.js?activeTab=readme" target="_blank">zone.js</a> as it's foundation
+  for change detection. The primary use case of this foundational element (and use within the Angular framework),
+  is that it allowed developers to not "think" about change detection in their components. Angular is slowly
+  removing, what has not been an inclusion ill-advised, but rather a "stay overwelcomed" by zone.js in the Angular
+  framework.
+</p>
+<p>
+  Removing zone.js not only improves bundle size and performance, but it also steers us in new ways of thinking
+  about- and writing Angular applications. Without zone.js many implementations of page state rendering in our
+  existing solutions will merely stop working. A good command of Signals (and to a smaller degree rxjs coupled with
+  asynchronous pipes/mechanisms) is required to enter the world of a zoneless Angular application.
+</p>
+<p>
+  This project uses the experimental Zoneless Change Detection provider and encourages the use of alternative
+  change detection mechanisms. Review the following routes and their implementations of alternative change
+  detection:
+</p>
+<ul>
+  <li><a routerLink="/signals">Signals</a></li>
+  <li><a routerLink="/http-resource">httpResource</a></li>
+</ul>
