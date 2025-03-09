@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient, httpResource, HttpResourceRef } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
-import { Todo } from '../models/todo';
 import { SortByParameter } from '../models/sort-by-parameter';
+import { Todo } from '../models/todo';
 
 @Injectable({
   providedIn: 'root',
