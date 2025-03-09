@@ -7,4 +7,5 @@ import { RouterModule } from '@angular/router';
   templateUrl: './rationale.route.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class RationaleRouteComponent {}
+export default class RationaleRouteComponent {
+}
