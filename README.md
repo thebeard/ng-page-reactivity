@@ -1,59 +1,41 @@
-# Ng19client
+# Angular Page Reactivity
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+## Angular Boilerplate
 
-## Development server
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1. See [Angular CLI repo](https://github.com/angular/angular-cli/blob/main/packages/schematics/angular/library/files/README.md.template) for the rest of the boilerplate.
 
-To start a local development server, run:
+| Running this project                          | Command / URL           |
+| --------------------------------------------- | ----------------------- |
+| To start a local development server, run:     | `ng serve`              |
+| To access the local development server, open: | `http://localhost:4200` |
 
-```bash
-ng serve
-```
+## About this project
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+> An approximate excerpt of [src/app/routes/rationale/rationale.route.component.html](./src/app/routes/rationale/rationale.route.component.html)
 
-## Code scaffolding
+We use frameworks and libraries because they do a lot of boilerplate and heavy lifting for us, often because we don't necessarily **want to** or **have the time to** understand all the lower level complexities of our corresponding front- and back-end; or full-stack principles.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+At least for me, for the longest time **change detection** was one of the pieces of "magic" that I took for granted in my favourite Single Page Application framework, <a href="http://angular.dev">Angular</a>. The Angular team has been making very impressive changes since version 9 (now ten versions ago!); with some of biggest milestones for me being the Ivy Compiler, standalone components and improved control-flow handling in our Angular templates.
 
-```bash
-ng generate component component-name
-```
+In this small project I am specifically tackling two things:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### An opinion of opinion
 
-```bash
-ng generate --help
-```
+Unlike other SPA tools like Vue, React and Svelte, Angular is a fully-fledged, (consired very) opinionated, front-end framework. In turn, this is merely my opinion, but I believe Angular has already, and will continue to introduce alternative ways of building the same thing.
 
-## Building
+Often one use case requires nuances of an approach A and would suffer under an approach B, while vice versa the same might or might not be true.
 
-To build the project run:
+In the past there would usually be a prescribed (not necessarily forced) way of doing things in Angular, where now the options to solve our challenges are not just becoming more expansive, but often comes down to language- or browser native approaches; or even in the form of industry-acknowledged agnostic library "primitives". I trust you will see some motivation towards that opinion of mine in this mini-project.
 
-```bash
-ng build
-```
+### The signal behind Signals
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+One of the other milestones is the use of Signals being adopted; or being encouraged for adoption, by the Angular team. There are enough articles on the internet related to the evolution of <a href="https://angular.dev/essentials/signals" target="_blank">Signals</a>, but this project would like to highlight the "long play" or the core driver behind the introduction of Signals.
 
-## Running unit tests
+Since inception Angular has been using <a href="https://www.npmjs.com/package/zone.js?activeTab=readme" target="_blank">zone.js</a> as it's foundation for change detection. The primary use case of this foundational element (and use within the Angular framework), is that it allowed developers to not "think" about change detection in their components. Angular is slowly removing, what has not been an inclusion ill-advised, but rather a "stay overwelcomed" by zone.js in the Angular framework.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Removing zone.js not only improves bundle size and performance, but it also steers us in new ways of thinking about- and writing Angular applications. Without zone.js many implementations of page state rendering in our existing solutions will merely stop working. A good command of Signals (and to a smaller degree rxjs coupled with asynchronous pipes/mechanisms) is required to enter the world of a zoneless Angular application.
 
-```bash
-ng test
-```
+This project uses the experimental Zoneless Change Detection provider and encourages the use of alternative change detection mechanisms. Review the following routes and their implementations of alternative change detection:
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Signals
+- httpResource
