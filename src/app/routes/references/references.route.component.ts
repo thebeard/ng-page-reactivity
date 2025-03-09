@@ -14,7 +14,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     </ul>
   `,
   styles: ``,
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class ReferencesRouteComponent {
   links = [
@@ -25,5 +25,6 @@ export default class ReferencesRouteComponent {
     'https://angular.dev/guide/signals',
     'https://medium.com/@sehban.alam/what-is-zone-js-in-angular-e0029c21c32f',
     'https://www.youtube.com/watch?v=vHNeAqgNM4o',
+    'https://v17.angular.io/guide/deployment'
   ];
 }
